@@ -21,6 +21,6 @@ target
 #.idea/
 
 # Cargo.lock files
-Cargo.lock
+**/Cargo.lock
 # Output files
 *.o
