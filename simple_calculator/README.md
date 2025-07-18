@@ -21,6 +21,13 @@ Results stored in output_file.txt
 
 ## Building
 Same as  the `hello_world` project, this one includes a `Makefile` you can run: 
-```
+```sh
 make
 ```
+You can slso use Rust's package manager `cargo` to build and run it : 
+```sh
+cargo build
+cargo run 
+
+```
+
