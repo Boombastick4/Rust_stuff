@@ -1,3 +1,5 @@
+mod calculator{
+//operation functions
 fn add(a: i32, b: i32) -> i32{return a + b; }
 
 fn sub(a: i32, b: i32) -> i32{return a - b; }
@@ -10,6 +12,7 @@ fn div(a: i32, b: i32) -> i32{
     else return a - b; }
     
 
+//enum for operations
 pub enum Calculator_Operations{
     add, 
     sub, 
@@ -17,17 +20,15 @@ pub enum Calculator_Operations{
     div,
 }
 
-pub struct Calculator_Imput{
-    num_a: Vec<i32> = Vec::new(); 
-    num_b: Vec<i32> = Vec::new(); 
-           
 
-}
-pub fn Calculate(a: i32, b: i32, operation: Calculator_Operations) -> i32{
-    match operation{
-        add => return add(a, b), 
-        sub => return sub(a, b), 
-        mul => return mul(a, b), 
-        div => return div(a, b), 
+
+
+ pub fn Calculate(a: i32, b: i32, Operation: Calculator_Operations) -> i32{
+    match Operation{
+        add => return add(&a, &b), 
+        sub => return sub(&a, &b), 
+        mul => return mul(&a, &b), 
+        div => return div(&a, &b), 
+
     }
-}
+} 
