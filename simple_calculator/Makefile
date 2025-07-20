@@ -7,4 +7,5 @@ clean:
 	rm -rf target/
 
 default: 
+	clean 
 	all
