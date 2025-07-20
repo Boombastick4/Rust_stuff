@@ -24,10 +24,7 @@ Same as  the `hello_world` project, this one includes a `Makefile` you can run:
 ```sh
 make
 ```
-You can slso use Rust's package manager `cargo` to build and run it : 
-```sh
-cargo build
-cargo run 
+#### Note on  `Cargo` 
 
-```
-
+You cannot use `cargo` to run this program, because the program reads up to 4 command line arguments, which includes the program name itself.<br>
+Using `cargo run` will bump that to 5, causing an error when parsing.
