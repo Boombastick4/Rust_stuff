@@ -15,12 +15,13 @@ fn read_numbers(filename_1: &str, filename_2: &str, op: &str){
         "sub"  =>  calculator::Calculator_Operations::sub,
         "mul"  =>  calculator::Calculator_Operations::mul, 
         "div"  =>  calculator::Calculator_Operations::div, 
+        &_ => todo!("Create better case handling"),
     };
     let mut file_1 = File::open(&filename_1).expect("Input file 1 not found"); 
     let mut file_2 = File::open(&filename_2).expect("Input file 2 not found"); 
     let reader_1 = io::BufReader::new(file_1); 
     let reader_2 = io::BufReader::new(file_2); 
-    if(reader_1.lines().count() != reader_2.lines().count()) {panic!("Not equal numbers in both files !!!"); }
+    if reader_1.lines().count() != reader_2.lines().count() {panic!("Not equal numbers in both files !!!"); }
     
     else{
         let mut num_1 = Vec::new(); 
@@ -47,7 +48,7 @@ fn read_numbers(filename_1: &str, filename_2: &str, op: &str){
 fn main() -> io::Result<()> {
     let args: Vec<String> = env::args().collect(); //this returns a vector of string of all the
                                                    //command line arguments
-    if (args.len() != 3) {panic!("Argument number not equal to 3"); }
+    if args.len() != 3 {panic!("Argument number not equal to 3"); }
     else{ read_numbers(&args[1], &args[2], &args[3]); }
     
     
